@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab Report Cover Page</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+  <!-- Logo positioned above "Cover Page Generator" with reduced space -->
+  <div class="form-logo" style="margin-bottom: 0;"> <!-- Reduced margin -->
+    <img src="{{ url_for('static', filename='coverly-logo.png') }}" alt="Coverly Logo" width="150" style="display: block; margin: 0 auto;"> <!-- Same logo size -->
+  </div>
+  <h1 style="margin-top: -30px;"> Lab Report Cover Page Generator</h1> <!-- Reduced margin-top -->
+
+  <div class="dropdown-container">
+    <select id="coverType" class="dropdown">
+      <option value="/assignment">Assignment Cover Page</option>
+      <option value="/labreport">Lab Report Cover Page</option>
+    </select>
+  </div>
+
+  <form id="labreportForm" action="/generate_labreport" method="post" class="form">
+    <label>Course Code:</label>
+    <input type="text" name="course_code" placeholder="Enter course code" required>
+
+    <label>Course Title:</label>
+    <input type="text" name="course_title" placeholder="Enter course title" required>
+
+    <label>Experiment No:</label>
+    <input type="text" name="experiment_no" placeholder="Enter experiment no" required>
+
+    <label>Experiment Name:</label>
+    <input type="text" name="experiment_name" placeholder="Enter experiment name" required>
+
+    <label>Teacher Name:</label>
+    <input type="text" name="teacher_name" placeholder="Enter teacher name" required>
+
+    <label>Teacher Designation:</label>
+    <input type="text" name="teacher_designation" placeholder="Enter teacher designation" required>
+
+    <label>Teacher Department:</label>
+    <input type="text" name="teacher_dept" placeholder="Enter teacher department" required>
+
+    <label>Student Name:</label>
+    <input type="text" name="student_name" placeholder="Enter student name" required>
+
+    <label>Student ID:</label>
+    <input type="text" name="student_id" placeholder="Enter student ID" required>
+
+    <label>Section:</label>
+    <input type="text" name="student_section" placeholder="Enter section" required>
+
+    <label>Student Department:</label>
+    <input type="text" name="student_dept" placeholder="Enter department name" required>
+
+    <label>Submission Date:</label>
+    <input type="date" name="submission_date" required>
+
+    <!-- Generate button for Lab Report cover page -->
+    <button id="generateButton" type="button" class="generate-button">Generate Cover Page</button>
+    <button type="button" id="resetButton" class="reset-button">Reset Form</button>
+
+    <div id="loadingSpinner" class="spinner" style="display:none;"></div>
+  </form>
+</div>
+
+<footer>
+  <div class="footer-icons">
+    <a href="https://github.com/mosabbir-maruf" target="_blank"><img src="/static/github.png" alt="GitHub"></a>
+    <a href="https://www.facebook.com/mosabbir.maruf/" target="_blank"><img src="/static/facebook.png" alt="Facebook"></a>
+    <a href="https://www.instagram.com/mosabbir_maruf/" target="_blank"><img src="/static/instagram.png" alt="Instagram"></a>
+    <a href="https://bio.link/mosabbir_maruf" target="_blank"><img src="/static/biolink.png" alt="BioLink"></a>
+  </div>
+  <strong>Mosabbir Maruf</strong>
+  <p>All rights reserved.</p>
+  <div id="visitorCount">
+    <p>Daily Visitors: {{ visitor_count }}</p> <!-- Display the visitor count -->
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdown = document.getElementById('coverType');
+  
+  // Set default to lab report page on load
+  if (!window.location.pathname.includes('assignment')) {
+    dropdown.value = '/labreport';
+  }
+
+  dropdown.addEventListener('change', function() {
+    if (this.value) {
+      window.location.href = this.value;  // Redirect instantly without refresh flicker
+    }
+  });
+
+  const form = document.getElementById('labreportForm');
+  const spinner = document.getElementById('loadingSpinner');
+  const button = document.getElementById('generateButton');
+  const resetButton = document.getElementById('resetButton');
+
+  // Handle the "Generate Cover Page" button click
+  button.addEventListener('click', function() {
+    const formData = new FormData(form);
+
+    // Show loading spinner
+    spinner.style.display = 'inline-block';
+
+    // Send form data to generate the file
+    fetch(form.action, {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.blob())  // Handle the blob response (file)
+    .then(blob => {
+      // Extract the last 4 digits of student ID
+      const studentId = form.querySelector('[name="student_id"]').value;
+      const last4Digits = studentId.slice(-4);  // Get last 4 digits of the student ID
+
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `Lab Report Cover Page _(${last4Digits}).docx`;  // Dynamic filename based on last 4 digits of student ID
+      link.click();
+      spinner.style.display = 'none';  // Hide spinner after the download
+    })
+    .catch(error => {
+      console.error('Error generating cover page:', error);
+      spinner.style.display = 'none';  // Hide spinner in case of error
+    });
+  });
+
+  // Save form data to localStorage on input change
+  form.addEventListener('input', function() {
+    const formData = {};
+    new FormData(form).forEach((value, key) => {
+      formData[key] = value;
+    });
+    localStorage.setItem('labreportFormData', JSON.stringify(formData));
+  });
+
+  // Restore form data from localStorage on page load
+  const savedData = JSON.parse(localStorage.getItem('labreportFormData'));
+  if (savedData) {
+    Object.keys(savedData).forEach(key => {
+      if (form.elements[key]) {
+        form.elements[key].value = savedData[key];
+      }
+    });
+  }
+
+  // Show spinner on form submit
+  form.addEventListener('submit', function() {
+    spinner.style.display = 'inline-block';
+    button.disabled = true;
+  });
+
+  // Reset form and clear localStorage data
+  resetButton.addEventListener('click', function() {
+    form.reset();
+    localStorage.removeItem('labreportFormData');
+  });
+});
+</script>
+
+</body>
+</html>
+

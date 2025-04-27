@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cover Page Generator</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+  <div class="form-logo" style="margin-bottom: 0;">
+    <img src="{{ url_for('static', filename='coverly-logo.png') }}" alt="Coverly Logo" width="150" style="display: block; margin: 0 auto;">
+  </div>
+  <h1 style="margin-top: -30px;"> Assignment Cover Page Generator</h1>
+
+  <div class="dropdown-container">
+    <select id="coverType" class="dropdown">
+      <!-- Pre-select 'Assignment Cover Page' if on assignment page -->
+      <option value="/assignment" id="assignmentOption" selected>Assignment Cover Page</option>
+      <!-- Pre-select 'Lab Report Cover Page' if on labreport page -->
+      <option value="/labreport" id="labReportOption">Lab Report Cover Page</option>
+    </select>
+  </div>
+
+
+  <form id="assignmentForm" action="/generate_assignment" method="POST" class="form" enctype="multipart/form-data">
+    <label>Assignment No:</label>
+    <input type="text" name="assignment_no" placeholder="Enter assignment no" required>
+
+    <label>Course Code:</label>
+    <input type="text" name="course_code" placeholder="Enter course code" required>
+
+    <label>Course Title:</label>
+    <input type="text" name="course_title" placeholder="Enter course title" required>
+
+    <label>Teacher Name:</label>
+    <input type="text" name="teacher_name" placeholder="Enter teacher name" required>
+
+    <label>Teacher Designation:</label>
+    <input type="text" name="teacher_designation" placeholder="Enter teacher designation" required>
+
+    <label>Teacher Department:</label>
+    <input type="text" name="teacher_dept" placeholder="Enter teacher department" required>
+
+    <label>Student Name:</label>
+    <input type="text" name="student_name" placeholder="Enter student name" required>
+
+    <label>Student ID:</label>
+    <input type="text" name="student_id" placeholder="Enter student ID" required>
+
+    <label>Section:</label>
+    <input type="text" name="student_section" placeholder="Enter section" required>
+
+    <label>Department Name:</label>
+    <input type="text" name="student_dept" placeholder="Enter department name" required>
+
+    <label>Submission Date:</label>
+    <input type="date" name="submission_date" required>
+
+    <button type="submit" class="generate-button">Generate Cover Page</button>
+    <button type="button" id="resetButton" class="reset-button">Reset Form</button>
+
+    <div id="loadingSpinner" class="spinner" style="display:none;"></div>
+  </form>
+</div>
+
+<footer>
+  <div class="footer-icons">
+    <a href="https://github.com/mosabbir-maruf" target="_blank"><img src="/static/github.png" alt="GitHub"></a>
+    <a href="https://www.facebook.com/mosabbir.maruf/" target="_blank"><img src="/static/facebook.png" alt="Facebook"></a>
+    <a href="https://www.instagram.com/mosabbir_maruf/" target="_blank"><img src="/static/instagram.png" alt="Instagram"></a>
+    <a href="https://bio.link/mosabbir_maruf" target="_blank"><img src="/static/biolink.png" alt="BioLink"></a>
+  </div>
+  <strong>Mosabbir Maruf</strong>
+  <p>All rights reserved.</p>
+  <div id="visitorCount">
+    <p>Daily Visitors: {{ visitor_count }}</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdown = document.getElementById('coverType');
+  
+  // Manually set the correct option based on the current page
+  if (window.location.pathname.includes('assignment')) {
+    dropdown.value = '/assignment';  // Pre-select 'Assignment Cover Page' if on the assignment page
+  } else if (window.location.pathname.includes('labreport')) {
+    dropdown.value = '/labreport';  // Pre-select 'Lab Report Cover Page' if on the lab report page
+  }
+
+  dropdown.addEventListener('change', function() {
+    if (this.value) {
+      window.location.href = this.value;  // Redirect instantly without refresh flicker
+    }
+  });
+
+  const form = document.getElementById('assignmentForm');
+  const spinner = document.getElementById('loadingSpinner');
+  const button = document.getElementById('generateButton');
+  const resetButton = document.getElementById('resetButton');
+
+  // Save form data to localStorage on input change
+  form.addEventListener('input', function() {
+    const formData = {};
+    new FormData(form).forEach((value, key) => {
+      formData[key] = value;
+    });
+    localStorage.setItem('assignmentFormData', JSON.stringify(formData));
+  });
+
+  // Restore form data from localStorage on page load
+  const savedData = JSON.parse(localStorage.getItem('assignmentFormData'));
+  if (savedData) {
+    Object.keys(savedData).forEach(key => {
+      if (form.elements[key]) {
+        form.elements[key].value = savedData[key];
+      }
+    });
+  }
+
+  // Show spinner on form submit
+  form.addEventListener('submit', function() {
+    spinner.style.display = 'inline-block';
+    button.disabled = true;
+  });
+
+  // Reset form and clear localStorage data
+  resetButton.addEventListener('click', function() {
+    form.reset();
+    localStorage.removeItem('assignmentFormData');
+  });
+});
+</script>
+
+</body>
+</html>
+

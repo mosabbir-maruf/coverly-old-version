@@ -1,0 +1,221 @@
+/* === Base Styling === */
+body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: 'Fira Mono', monospace;
+    font-size: 15px;
+    margin: 0;
+    padding: 30px;
+}
+
+/* === Container === */
+.container {
+    max-width: 580px; /* Updated max-width for better visual appearance */
+    backdrop-filter: blur(12px);
+    margin: 40px auto;
+    padding: 37px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* === Heading === */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* === Dropdown === */
+.dropdown-container {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.dropdown {
+    width: 40%; /* Adjusted to fit nicely within the container */
+    padding: 8px;
+    font-size: 17px;
+    border-radius: 6px;
+    border: 1px solid #444444;
+    background: rgba(30, 30, 30, 0.9);
+    color: #ffffff;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+.dropdown:hover {
+    background: rgba(0, 150, 255, 0.1);
+    color: #00c6ff;
+    transform: scale(1.02);
+}
+
+.dropdown:focus {
+    outline: none;
+    background-color: rgba(0, 150, 255, 0.15);
+    border: px solid #00c6ff;
+    box-shadow: 0 0 10px rgba(0, 150, 255, 0.8);
+}
+
+.dropdown option {
+    background-color: rgba(30, 30, 30, 0.9);
+    color: #ffffff;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.dropdown option:hover {
+    background-color: #0072ff;
+    color: #ffffff;
+}
+
+/* === Form Layout === */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 9px; /* Adjusted gap between form elements */
+    width: 100%; /* Ensure form takes the full width */
+}
+
+label {
+    display: block;
+    margin-top: 2px;
+    font-weight: 580;
+    font-size: 15px;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: #262626;
+    color: #ffffff;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 150, 255, 0.6);
+}
+
+input::placeholder {
+    color: #888888;
+}
+
+/* === Buttons === */
+.generate-button,
+.reset-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.generate-button:hover,
+.reset-button:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+/* === Spinner === */
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0072ff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto 10px auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* === Footer === */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.footer-icons {
+    margin-bottom: 10px;
+}
+
+.footer-icons img {
+    width: 24px;
+    margin: 0 4px;
+    vertical-align: middle;
+}
+
+footer strong {
+    font-size: 18px;
+    color: white;
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#visitorCount {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 8px;
+}
+
+/* === Mobile Tweaks === */
+@media (max-width: 480px) {
+    .container {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .dropdown {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .generate-button,
+    .reset-button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .footer-icons img {
+        width: 22px;
+        margin: 0 4px;
+    }
+}
+
