@@ -3,44 +3,44 @@ body {
     background-color: #0a0a0a;
     color: #ffffff;
     font-family: 'Fira Mono', monospace;
-    font-size: 18px; /* Increased font size */
+    font-size: 16px; /* Decreased font size for mobile */
     margin: 0;
-    padding: 30px;
+    padding: 20px; /* Decreased padding for a more compact layout */
 }
 
 /* === Container === */
 .container {
     max-width: 635px; /* Updated max-width for a larger container */
     backdrop-filter: blur(12px);
-    margin: 40px auto;
-    padding: 45px; /* Increased padding */
-    border-radius: 16px;
+    margin: 30px auto; /* Reduced margin */
+    padding: 30px; /* Decreased padding */
+    border-radius: 12px; /* Slightly reduced border-radius */
     background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Reduced box-shadow */
     animation: fadeIn 0.5s ease-in-out;
 }
 
 /* === Heading === */
 h1 {
     text-align: center;
-    margin-bottom: 30px; /* Increased margin */
-    font-size: 28px; /* Increased font size */
+    margin-bottom: 20px; /* Reduced bottom margin */
+    font-size: 22px; /* Decreased font size */
     font-weight: bold;
 }
 
 /* === Dropdown === */
 .dropdown-container {
-    margin-bottom: 20px; /* Increased margin */
+    margin-bottom: 15px; /* Reduced margin */
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
 .dropdown {
-    width: 45%; /* Increased width for larger dropdown */
-    padding: 12px; /* Increased padding */
-    font-size: 20px; /* Increased font size */
-    border-radius: 8px;
+    width: 80%; /* Reduced width for mobile */
+    padding: 10px; /* Reduced padding */
+    font-size: 16px; /* Reduced font size */
+    border-radius: 6px; /* Smaller border radius */
     border: 1px solid #444444;
     background: rgba(30, 30, 30, 0.9);
     color: #ffffff;
@@ -67,8 +67,8 @@ h1 {
 .dropdown option {
     background-color: rgba(30, 30, 30, 0.9);
     color: #ffffff;
-    padding: 12px; /* Increased padding */
-    font-size: 16px; /* Increased font size */
+    padding: 10px; /* Reduced padding */
+    font-size: 14px; /* Reduced font size */
 }
 
 .dropdown option:hover {
@@ -80,25 +80,25 @@ h1 {
 form {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Increased gap between form elements */
+    gap: 8px; /* Reduced gap between form elements */
     width: 100%;
 }
 
 label {
     display: block;
-    margin-top: 5px; /* Increased margin */
+    margin-top: 4px; /* Reduced margin */
     font-weight: 580;
-    font-size: 18px; /* Increased font size */
+    font-size: 16px; /* Reduced font size */
 }
 
 input[type="text"],
 input[type="date"],
 select {
     width: 100%;
-    padding: 14px; /* Increased padding */
-    font-size: 18px; /* Increased font size */
+    padding: 12px; /* Reduced padding */
+    font-size: 16px; /* Reduced font size */
     border: 1px solid #333;
-    border-radius: 12px; /* Slightly larger border radius */
+    border-radius: 10px; /* Slightly smaller border radius */
     background-color: #262626;
     color: #ffffff;
     box-sizing: border-box;
@@ -119,13 +119,13 @@ input::placeholder {
 .generate-button,
 .reset-button {
     width: 100%;
-    padding: 15px; /* Increased padding */
-    font-size: 18px; /* Increased font size */
+    padding: 12px; /* Reduced padding */
+    font-size: 16px; /* Reduced font size */
     font-weight: bold;
     color: #ffffff;
     background: linear-gradient(90deg, #00c6ff, #0072ff);
     border: none;
-    border-radius: 12px; /* Larger border radius */
+    border-radius: 10px; /* Slightly smaller border radius */
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -141,8 +141,8 @@ input::placeholder {
     border: 4px solid #f3f3f3;
     border-top: 4px solid #0072ff;
     border-radius: 50%;
-    width: 40px; /* Larger spinner */
-    height: 40px; /* Larger spinner */
+    width: 35px; /* Smaller spinner */
+    height: 35px; /* Smaller spinner */
     animation: spin 1s linear infinite;
     margin: 30px auto 15px auto;
     display: none;
@@ -155,66 +155,72 @@ input::placeholder {
 
 /* === Footer === */
 footer {
-    margin-top: 50px; /* Increased margin */
+    margin-top: 40px; /* Reduced margin */
     text-align: center;
-    font-size: 16px; /* Increased font size */
+    font-size: 12px; /* Reduced font size */
     color: #ccc;
 }
 
 .footer-icons {
-    margin-bottom: 15px; /* Increased margin */
+    margin-bottom: 12px; /* Reduced margin */
 }
 
 .footer-icons img {
-    width: 28px; /* Larger footer icons */
-    margin: 0 6px; /* Increased space between icons */
+    width: 24px; /* Smaller footer icons */
+    margin: 0 5px; /* Reduced space between icons */
     vertical-align: middle;
 }
 
 footer strong {
-    font-size: 22px; /* Increased font size */
+    font-size: 15px; /* Reduced font size */
     color: white;
     display: block;
-    margin-top: 15px; /* Increased margin */
+    margin-top: 12px; /* Reduced margin */
     font-weight: bold;
 }
 
 #visitorCount {
-    font-size: 14px; /* Increased font size */
+    font-size: 9.5px; /* Reduced font size */
     color: #aaa;
-    margin-top: 10px; /* Increased margin */
+    margin-top: 8px; /* Reduced margin */
 }
 
 /* === Mobile Tweaks === */
 @media (max-width: 520px) {
+    /* Remove background card */
     .container {
-        margin: 20px;
-        padding: 50px 30px; /* Increased padding for mobile */
+        background: none;
+        box-shadow: none;
+        padding: 0; /* Remove padding */
+        margin: 20px; /* Adjust margin to fit */
+        border-radius: 0; /* Remove border radius */
     }
 
     h1 {
-        font-size: 26px; /* Larger font size for mobile */
+        font-size: 24px; /* Smaller font size */
+        margin-bottom: 20px; /* Adjusted margin */
     }
 
     .dropdown {
-        font-size: 18px; /* Increased font size for mobile */
-        padding: 16px; /* Increased padding */
+        width: 85%; /* Increased width for dropdown */
+        font-size: 16px; /* Adjusted font size */
+        padding: 14px; /* Adjusted padding */
     }
 
     input[type="text"],
     input[type="date"] {
-        font-size: 18px; /* Increased font size */
-        padding: 16px; /* Increased padding */
+        font-size: 16px; /* Adjusted font size */
+        padding: 14px; /* Adjusted padding */
     }
 
     .generate-button,
     .reset-button {
-        font-size: 18px; /* Increased font size */
-        padding: 16px; /* Increased padding */
+        font-size: 16px; /* Adjusted font size */
+        padding: 14px; /* Adjusted padding */
     }
 
     .footer-icons img {
-        width: 32px; /* Larger footer icons */
-        margin: 0 8px; /* Increased space between icons */
+        width: 28px; /* Adjusted footer icon size */
+        margin: 0 8px; /* Adjusted space between icons */
     }
 }
