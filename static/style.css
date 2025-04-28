@@ -167,7 +167,7 @@ input::placeholder {
 footer {
     margin-top: 40px; /* Reduced margin */
     text-align: center;
-    font-size: 14px; /* Reduced font size */
+    font-size: 10px; /* Reduced font size */
     color: #ccc;
 }
 
@@ -182,7 +182,7 @@ footer {
 }
 
 footer strong {
-    font-size: 18px; /* Reduced font size */
+    font-size: 16px; /* Reduced font size */
     color: white;
     display: block;
     margin-top: 12px; /* Reduced margin */
@@ -190,47 +190,47 @@ footer strong {
 }
 
 #visitorCount {
-    font-size: 12px; /* Reduced font size */
+    font-size: 9px; /* Reduced font size */
     color: #aaa;
     margin-top: 8px; /* Reduced margin */
 }
 
 /* === Mobile Tweaks === */
 @media (max-width: 520px) {
-    /* Keep the background card for mobile and decrease card size by 2-3% */
+    /* Keep the background card for mobile and decrease card size further */
     .container {
         background: linear-gradient(135deg, #0d0d0d, #1a1a1a); /* Keep the background */
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Retain box-shadow */
-        padding: 38px; /* Increased padding slightly */
-        margin: 35px auto; /* Adjust margin to fit */
+        padding: 32px; /* Reduced padding for more compact design */
+        margin: 25px auto; /* Decreased margin */
         border-radius: 12px; /* Rounded corners for mobile */
     }
 
     h1 {
-        font-size: 24px; /* Smaller font size */
-        margin-bottom: 20px; /* Adjusted margin */
+        font-size: 22px; /* Smaller font size */
+        margin-bottom: 15px; /* Reduced margin */
     }
 
     .dropdown {
-        width: 85%; /* Increased width for dropdown */
-        font-size: 16px; /* Adjusted font size */
-        padding: 16px; /* Adjusted padding */
+        width: 80%; /* Decreased width for dropdown */
+        font-size: 14px; /* Slightly smaller font size */
+        padding: 14px; /* Adjusted padding */
     }
 
     input[type="text"],
     input[type="date"] {
-        font-size: 16px; /* Adjusted font size */
-        padding: 16px; /* Adjusted padding */
+        font-size: 14px; /* Slightly smaller font size */
+        padding: 14px; /* Adjusted padding */
     }
 
     .generate-button,
     .reset-button {
-        font-size: 16px; /* Adjusted font size */
-        padding: 16px; /* Adjusted padding */
+        font-size: 14px; /* Adjusted font size */
+        padding: 14px; /* Adjusted padding */
     }
 
     .footer-icons img {
-        width: 28px; /* Adjusted footer icon size */
-        margin: 0 8px; /* Adjusted space between icons */
+        width: 24px; /* Adjusted footer icon size */
+        margin: 0 6px; /* Adjusted space between icons */
     }
 }
