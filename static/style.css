@@ -10,7 +10,7 @@ body {
 
 /* === Container === */
 .container {
-    max-width: 580px; /* Updated max-width for better visual appearance */
+    max-width: 600px; /* Updated max-width for better visual appearance */
     backdrop-filter: blur(12px);
     margin: 40px auto;
     padding: 37px;
@@ -186,30 +186,30 @@ footer strong {
 }
 
 /* === Mobile Tweaks === */
-@media (max-width: 480px) {
+@media (max-width: 550px) {
     .container {
         margin: 20px;
         padding: 30px 20px;
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 23px;
     }
 
     .dropdown {
-        font-size: 13px;
-        padding: 10px;
+        font-size: 14px;
+        padding: 11px;
     }
 
     input[type="text"],
     input[type="date"] {
-        font-size: 14px;
-        padding: 10px;
+        font-size: 15px;
+        padding: 11px;
     }
 
     .generate-button,
     .reset-button {
-        font-size: 14px;
+        font-size: 15px;
         padding: 10px;
     }
 
