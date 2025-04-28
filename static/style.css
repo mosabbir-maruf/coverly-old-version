@@ -3,17 +3,17 @@ body {
     background-color: #0a0a0a;
     color: #ffffff;
     font-family: 'Fira Mono', monospace;
-    font-size: 15px;
+    font-size: 18px; /* Increased font size */
     margin: 0;
     padding: 30px;
 }
 
 /* === Container === */
 .container {
-    max-width: 600px; /* Updated max-width for better visual appearance */
+    max-width: 680px; /* Increased max-width for a larger container */
     backdrop-filter: blur(12px);
     margin: 40px auto;
-    padding: 37px;
+    padding: 45px; /* Increased padding */
     border-radius: 16px;
     background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
@@ -23,24 +23,24 @@ body {
 /* === Heading === */
 h1 {
     text-align: center;
-    margin-bottom: 25px;
-    font-size: 22px;
+    margin-bottom: 30px; /* Increased margin */
+    font-size: 28px; /* Increased font size */
     font-weight: bold;
 }
 
 /* === Dropdown === */
 .dropdown-container {
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Increased margin */
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
 .dropdown {
-    width: 40%; /* Adjusted to fit nicely within the container */
-    padding: 8px;
-    font-size: 17px;
-    border-radius: 6px;
+    width: 45%; /* Increased width for larger dropdown */
+    padding: 12px; /* Increased padding */
+    font-size: 20px; /* Increased font size */
+    border-radius: 8px;
     border: 1px solid #444444;
     background: rgba(30, 30, 30, 0.9);
     color: #ffffff;
@@ -54,21 +54,21 @@ h1 {
 .dropdown:hover {
     background: rgba(0, 150, 255, 0.1);
     color: #00c6ff;
-    transform: scale(1.02);
+    transform: scale(1.05); /* Slightly larger hover scale */
 }
 
 .dropdown:focus {
     outline: none;
     background-color: rgba(0, 150, 255, 0.15);
     border: px solid #00c6ff;
-    box-shadow: 0 0 10px rgba(0, 150, 255, 0.8);
+    box-shadow: 0 0 12px rgba(0, 150, 255, 0.8);
 }
 
 .dropdown option {
     background-color: rgba(30, 30, 30, 0.9);
     color: #ffffff;
-    padding: 10px;
-    font-size: 14px;
+    padding: 12px; /* Increased padding */
+    font-size: 16px; /* Increased font size */
 }
 
 .dropdown option:hover {
@@ -80,25 +80,25 @@ h1 {
 form {
     display: flex;
     flex-direction: column;
-    gap: 9px; /* Adjusted gap between form elements */
-    width: 100%; /* Ensure form takes the full width */
+    gap: 12px; /* Increased gap between form elements */
+    width: 100%;
 }
 
 label {
     display: block;
-    margin-top: 2px;
+    margin-top: 5px; /* Increased margin */
     font-weight: 580;
-    font-size: 15px;
+    font-size: 18px; /* Increased font size */
 }
 
 input[type="text"],
 input[type="date"],
 select {
     width: 100%;
-    padding: 10px;
-    font-size: 15px;
+    padding: 14px; /* Increased padding */
+    font-size: 18px; /* Increased font size */
     border: 1px solid #333;
-    border-radius: 10px;
+    border-radius: 12px; /* Slightly larger border radius */
     background-color: #262626;
     color: #ffffff;
     box-sizing: border-box;
@@ -108,7 +108,7 @@ select {
 input[type="text"]:focus,
 input[type="date"]:focus {
     outline: none;
-    box-shadow: 0 0 8px rgba(0, 150, 255, 0.6);
+    box-shadow: 0 0 12px rgba(0, 150, 255, 0.6);
 }
 
 input::placeholder {
@@ -119,13 +119,13 @@ input::placeholder {
 .generate-button,
 .reset-button {
     width: 100%;
-    padding: 12px;
-    font-size: 15px;
+    padding: 15px; /* Increased padding */
+    font-size: 18px; /* Increased font size */
     font-weight: bold;
     color: #ffffff;
     background: linear-gradient(90deg, #00c6ff, #0072ff);
     border: none;
-    border-radius: 10px;
+    border-radius: 12px; /* Larger border radius */
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -133,7 +133,7 @@ input::placeholder {
 .generate-button:hover,
 .reset-button:hover {
     opacity: 0.9;
-    transform: scale(1.03);
+    transform: scale(1.05); /* Larger hover scale */
 }
 
 /* === Spinner === */
@@ -141,10 +141,10 @@ input::placeholder {
     border: 4px solid #f3f3f3;
     border-top: 4px solid #0072ff;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 40px; /* Larger spinner */
+    height: 40px; /* Larger spinner */
     animation: spin 1s linear infinite;
-    margin: 20px auto 10px auto;
+    margin: 30px auto 15px auto;
     display: none;
 }
 
@@ -155,66 +155,66 @@ input::placeholder {
 
 /* === Footer === */
 footer {
-    margin-top: 40px;
+    margin-top: 50px; /* Increased margin */
     text-align: center;
-    font-size: 12px;
+    font-size: 16px; /* Increased font size */
     color: #ccc;
 }
 
 .footer-icons {
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Increased margin */
 }
 
 .footer-icons img {
-    width: 24px;
-    margin: 0 4px;
+    width: 28px; /* Larger footer icons */
+    margin: 0 6px; /* Increased space between icons */
     vertical-align: middle;
 }
 
 footer strong {
-    font-size: 18px;
+    font-size: 22px; /* Increased font size */
     color: white;
     display: block;
-    margin-top: 10px;
+    margin-top: 15px; /* Increased margin */
     font-weight: bold;
 }
 
 #visitorCount {
-    font-size: 11px;
+    font-size: 14px; /* Increased font size */
     color: #aaa;
-    margin-top: 8px;
+    margin-top: 10px; /* Increased margin */
 }
 
 /* === Mobile Tweaks === */
-@media (max-width: 550px) {
+@media (max-width: 480px) {
     .container {
         margin: 20px;
-        padding: 30px 20px;
+        padding: 40px 25px; /* Adjusted padding */
     }
 
     h1 {
-        font-size: 23px;
+        font-size: 24px; /* Larger font size for mobile */
     }
 
     .dropdown {
-        font-size: 14px;
-        padding: 11px;
+        font-size: 16px; /* Increased font size */
+        padding: 14px; /* Increased padding */
     }
 
     input[type="text"],
     input[type="date"] {
-        font-size: 15px;
-        padding: 11px;
+        font-size: 16px; /* Increased font size */
+        padding: 14px; /* Increased padding */
     }
 
     .generate-button,
     .reset-button {
-        font-size: 15px;
-        padding: 10px;
+        font-size: 16px; /* Increased font size */
+        padding: 14px; /* Increased padding */
     }
 
     .footer-icons img {
-        width: 22px;
-        margin: 0 4px;
+        width: 28px; /* Larger footer icons */
+        margin: 0 6px; /* Increased space between icons */
     }
 }
