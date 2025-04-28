@@ -28,6 +28,8 @@ h1 {
     margin-bottom: 20px; /* Reduced bottom margin */
     font-size: 22px; /* Decreased font size */
     font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
 }
 
 /* === Dropdown === */
@@ -40,8 +42,8 @@ h1 {
 
 .dropdown {
     width: 80%; /* Reduced width for mobile */
-    padding: 10px; /* Reduced padding */
-    font-size: 16px; /* Reduced font size */
+    padding: 10px; /* Increased padding */
+    font-size: 16px; /* Adjusted font size */
     border-radius: 6px; /* Smaller border radius */
     border: 1px solid #444444;
     background: rgba(30, 30, 30, 0.9);
@@ -54,14 +56,14 @@ h1 {
 }
 
 .dropdown:hover {
-    background: rgba(0, 150, 255, 0.1);
+    background: rgba(0, 150, 255, 0.2);
     color: #00c6ff;
     transform: scale(1.05); /* Slightly larger hover scale */
 }
 
 .dropdown:focus {
     outline: none;
-    background-color: rgba(0, 150, 255, 0.15);
+    background-color: rgba(0, 150, 255, 0.2);
     border: px solid #00c6ff;
     box-shadow: 0 0 12px rgba(0, 150, 255, 0.8);
 }
@@ -69,7 +71,7 @@ h1 {
 .dropdown option {
     background-color: rgba(30, 30, 30, 0.9);
     color: #ffffff;
-    padding: 10px; /* Reduced padding */
+    padding: 10px; /* Adjusted padding */
     font-size: 14px; /* Reduced font size */
 }
 
@@ -97,8 +99,8 @@ input[type="text"],
 input[type="date"],
 select {
     width: 100%;
-    padding: 12px; /* Reduced padding */
-    font-size: 16px; /* Reduced font size */
+    padding: 14px; /* Increased padding */
+    font-size: 16px; /* Adjusted font size */
     border: 1px solid #333;
     border-radius: 10px; /* Slightly smaller border radius */
     background-color: #262626;
@@ -121,13 +123,13 @@ input::placeholder {
 .generate-button,
 .reset-button {
     width: 100%;
-    padding: 12px; /* Reduced padding */
-    font-size: 16px; /* Reduced font size */
+    padding: 14px; /* Increased padding */
+    font-size: 16px; /* Adjusted font size */
     font-weight: bold;
     color: #ffffff;
-    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
     border: none;
-    border-radius: 10px; /* Slightly smaller border radius */
+    border-radius: 12px; /* Slightly larger border radius */
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -136,6 +138,7 @@ input::placeholder {
 .reset-button:hover {
     opacity: 0.9;
     transform: scale(1.05); /* Larger hover scale */
+    box-shadow: 0 4px 10px rgba(0, 150, 255, 0.3); /* Added shadow on hover */
 }
 
 .generate-button:active,
@@ -194,13 +197,13 @@ footer strong {
 
 /* === Mobile Tweaks === */
 @media (max-width: 520px) {
-    /* Keep the background card for mobile and increase card size */
+    /* Keep the background card for mobile and decrease card size by 2-3% */
     .container {
         background: linear-gradient(135deg, #0d0d0d, #1a1a1a); /* Keep the background */
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Retain box-shadow */
-        padding: 40px; /* Increased padding for mobile */
-        margin: 40px auto; /* Adjust margin to fit */
-        border-radius: 12px; /* Add border radius back for mobile */
+        padding: 38px; /* Increased padding slightly */
+        margin: 35px auto; /* Adjust margin to fit */
+        border-radius: 12px; /* Rounded corners for mobile */
     }
 
     h1 {
@@ -211,19 +214,19 @@ footer strong {
     .dropdown {
         width: 85%; /* Increased width for dropdown */
         font-size: 16px; /* Adjusted font size */
-        padding: 14px; /* Adjusted padding */
+        padding: 16px; /* Adjusted padding */
     }
 
     input[type="text"],
     input[type="date"] {
         font-size: 16px; /* Adjusted font size */
-        padding: 14px; /* Adjusted padding */
+        padding: 16px; /* Adjusted padding */
     }
 
     .generate-button,
     .reset-button {
         font-size: 16px; /* Adjusted font size */
-        padding: 14px; /* Adjusted padding */
+        padding: 16px; /* Adjusted padding */
     }
 
     .footer-icons img {
