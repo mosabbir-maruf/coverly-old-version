@@ -10,7 +10,7 @@ body {
 
 /* === Container === */
 .container {
-    max-width: 680px; /* Increased max-width for a larger container */
+    max-width: 635px; /* Updated max-width for a larger container */
     backdrop-filter: blur(12px);
     margin: 40px auto;
     padding: 45px; /* Increased padding */
@@ -186,35 +186,35 @@ footer strong {
 }
 
 /* === Mobile Tweaks === */
-@media (max-width: 480px) {
+@media (max-width: 520px) {
     .container {
         margin: 20px;
-        padding: 40px 25px; /* Adjusted padding */
+        padding: 50px 30px; /* Increased padding for mobile */
     }
 
     h1 {
-        font-size: 24px; /* Larger font size for mobile */
+        font-size: 26px; /* Larger font size for mobile */
     }
 
     .dropdown {
-        font-size: 16px; /* Increased font size */
-        padding: 14px; /* Increased padding */
+        font-size: 18px; /* Increased font size for mobile */
+        padding: 16px; /* Increased padding */
     }
 
     input[type="text"],
     input[type="date"] {
-        font-size: 16px; /* Increased font size */
-        padding: 14px; /* Increased padding */
+        font-size: 18px; /* Increased font size */
+        padding: 16px; /* Increased padding */
     }
 
     .generate-button,
     .reset-button {
-        font-size: 16px; /* Increased font size */
-        padding: 14px; /* Increased padding */
+        font-size: 18px; /* Increased font size */
+        padding: 16px; /* Increased padding */
     }
 
     .footer-icons img {
-        width: 28px; /* Larger footer icons */
-        margin: 0 6px; /* Increased space between icons */
+        width: 32px; /* Larger footer icons */
+        margin: 0 8px; /* Increased space between icons */
     }
 }
